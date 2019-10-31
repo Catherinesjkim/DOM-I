@@ -41,12 +41,12 @@ const siteContent = {
                     Navigation 
  ********************************************/
 let nav = document.querySelectorAll("nav a");
-nav[0].innerHTML = siteContent.nav["nav-item-1"];
-nav[1].innerHTML = siteContent.nav["nav-item-2"];
-nav[2].innerHTML = siteContent.nav["nav-item-3"];
-nav[3].innerHTML = siteContent.nav["nav-item-4"];
-nav[4].innerHTML = siteContent.nav["nav-item-5"];
-nav[5].innerHTML = siteContent.nav["nav-item-6"];
+nav[0].textContent = siteContent.nav["nav-item-1"];
+nav[1].textContent = siteContent.nav["nav-item-2"];
+nav[2].textContent = siteContent.nav["nav-item-3"];
+nav[3].textContent = siteContent.nav["nav-item-4"];
+nav[4].textContent = siteContent.nav["nav-item-5"];
+nav[5].textContent = siteContent.nav["nav-item-6"];
 nav.forEach(link => link.style.color = "green");
 
 // Example: Update the img src for the logo
@@ -66,18 +66,19 @@ newElement2.textContent = "Blog";
 newElement2.href = "#";
 newElement2.style.color = "green";
 
-// Prepend and Apend the two new elements
+// Prepend and Append the two new elements
 newNav.prepend(newElement1);
 newNav.appendChild(newElement2);
 
 /*************************************************
                     Call to Action
 *************************************************/
+
 let ctaImg = document.querySelector("#cta-img");
 ctaImg.src = siteContent["cta"]["img-src"];
 
 const ctaText = document.querySelector(".cta-text h1");
-ctaText.innerHTML = siteContent['cta']['h1'].replace(/\s/g, "</br>");
+ctaText.innerHTML = siteContent['cta']['h1'].replace(/\s/g, "<br />" );
 
 const ctaBtn = document.querySelector(".cta-text button");
 ctaBtn.textContent = siteContent.cta["button"];
@@ -109,6 +110,7 @@ const contactHeader = document.querySelector(".contact h4");
 contactHeader.textContent = siteContent.contact["contact-h4"];
 
 const contactContent = document.querySelectorAll(".contact p");
+siteContent.contact["address"] = "123 Way 456 Street </br> Somewhere, USA";
 contactContent[0].innerHTML = siteContent.contact["address"];
 contactContent[1].textContent = siteContent.contact["phone"];
 contactContent[2].textContent = siteContent.contact["email"];
